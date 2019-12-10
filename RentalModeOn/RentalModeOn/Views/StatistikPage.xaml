@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:RentalModeOn.ViewModels"
+             mc:Ignorable="d"
+             x:Class="RentalModeOn.Views.StatistikPage" Title="Statistik">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <!--Diagram Batang-->
+                <StackLayout Margin="10,15,10,0" HeightRequest="200">
+                    <chart:SfChart x:Name="ChartStatistik"
+                                 AreaBorderColor="Black" AreaBorderWidth="2" HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="FillAndExpand">
+                        <!--Menampilkan ketika diclik-->
+                        <chart:SfChart.ChartBehaviors>
+                            <chart:ChartTooltipBehavior BackgroundColor="Black" BorderWidth="3" BorderColor="White"
+                                                        TextColor="White" FontSize="15" Duration="5"/>
+                        </chart:SfChart.ChartBehaviors>
+
+                        <!--Binding Data-->
+                        <chart:SfChart.BindingContext>
+                            <local:ViewModelStatistik/>
+                        </chart:SfChart.BindingContext>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis IsVertical="True" LabelRotationAngle="10"
+                                                >
+                                <chart:CategoryAxis.LabelStyle>
+                                    <chart:ChartAxisLabelStyle TextColor="Black" Font="Bold,15"/>
+                                </chart:CategoryAxis.LabelStyle>
+                                
+                                <!--LabelRotationAngle="5"  biar datanya jika diperlihatkan menjadi sama rata-->
+
+                                <!--<chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Name" TextColor="Black" FontSize="25"/>
+                                </chart:CategoryAxis.Title>-->
+
+                            </chart:CategoryAxis>
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis IsVisible="False" Maximum="300">
+                                <!--disable angka yang ada disisi kiri diagram-->
+
+                                <!--<chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="Height (in cm)" TextColor="Black" FontSize="25"/>
+                                </chart:NumericalAxis.Title>-->
+
+                            </chart:NumericalAxis>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <!--Tipe Chart-->
+                        <chart:SfChart.Series>
+                            <chart:ColumnSeries ItemsSource="{Binding Data}" Label="Heights" 
+                                                XBindingPath="Name" YBindingPath="Height" EnableTooltip="True">
+
+                                <chart:ColumnSeries.DataMarker>
+                                    <chart:ChartDataMarker LabelContent="DataMarkerLabel" ShowLabel="True" />
+                                    <!--tampilkan data-->
+                                </chart:ColumnSeries.DataMarker>
+
+                                <chart:ColumnSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom">
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <Color>Red</Color>
+                                            <Color>Green</Color>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:ColumnSeries.ColorModel>
+
+                            </chart:ColumnSeries>
+                        </chart:SfChart.Series>
+
+                    </chart:SfChart>
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--Pie Chart 1-->
+                <StackLayout Margin="0,0,10,0" >
+                    <chart:SfChart HeightRequest="200"  TranslationX="80" >
+                        <!--Binding Data-->
+                        <chart:SfChart.BindingContext>
+                            <local:ViewModelStatistik/>
+                        </chart:SfChart.BindingContext>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Left" OffsetX="310" >
+
+                                <chart:ChartLegend.LabelStyle>
+                                    <chart:ChartLegendLabelStyle TextColor="Red" Font="Bold,18" />
+                                </chart:ChartLegend.LabelStyle>
+                            </chart:ChartLegend>
+                        </chart:SfChart.Legend>
+
+                        <!--Tipe Chart-->
+                        <chart:SfChart.Series>
+                            <!--<chart:PieSeries ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Height" >
+                                
+                                </chart:PieSeries>-->
+
+                            <chart:PieSeries LegendIcon="Rectangle" ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Height"
+                                                  EnableDataPointSelection="True" EnableAnimation="True" EnableTooltip="True">
+
+                                <chart:PieSeries.DataMarker>
+                                    <chart:ChartDataMarker LabelContent="Percentage" />
+                                </chart:PieSeries.DataMarker>
+
+                                <chart:PieSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom">
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <Color>Red</Color>
+                                            <Color>Yellow</Color>
+                                            <Color>Green</Color>
+                                            <Color>Blue</Color>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:PieSeries.ColorModel>
+                            </chart:PieSeries>
+
+                        </chart:SfChart.Series>
+
+                    </chart:SfChart>
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--Pie Chart 2-->
+                <StackLayout Margin="0">
+                    <chart:SfChart HeightRequest="200"  TranslationX="-80">
+                        <!--Binding Data-->
+                        <chart:SfChart.BindingContext>
+                            <local:ViewModelStatistik/>
+                        </chart:SfChart.BindingContext>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Right" OffsetX="-310" />
+                        </chart:SfChart.Legend>
+
+                        <!--Tipe Chart-->
+                        <chart:SfChart.Series>
+                            <chart:PieSeries LegendIcon="Rectangle" ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Height"
+                                                  EnableDataPointSelection="True" EnableAnimation="True" EnableTooltip="True">
+
+                                <chart:PieSeries.DataMarker>
+                                    <chart:ChartDataMarker LabelContent="Percentage"/>
+                                </chart:PieSeries.DataMarker>
+
+                                <chart:PieSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom">
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <Color>Red</Color>
+                                            <Color>Yellow</Color>
+                                            <Color>Green</Color>
+                                            <Color>Blue</Color>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:PieSeries.ColorModel>
+                            </chart:PieSeries>
+                        </chart:SfChart.Series>
+                    </chart:SfChart>
+                </StackLayout>
+                <!--#endregion-->
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

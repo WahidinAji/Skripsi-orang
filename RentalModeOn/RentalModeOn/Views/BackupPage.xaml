@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RentalModeOn.Views.BackupPage" Title="Backup / Restore">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label Text="Alamat Server" AbsoluteLayout.LayoutBounds="85,40,100,50" TextColor="Black"/>
+            <ImageButton BackgroundColor="Silver" Source="akun.png" CornerRadius="50" BorderColor="Transparent"
+                   AbsoluteLayout.LayoutBounds="25,40,70,50" Scale="0.6" />
+            <Label Text="http:myfirstportofolio.io" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="90,60,150,50"/>
+            <ProgressBar IsVisible="True" AbsoluteLayout.LayoutBounds="85,60,250,50" ProgressColor="Black" />
+            <TableView AbsoluteLayout.LayoutBounds="30,100,350,200">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10,0,20,0">
+                                <Label Text="Kadaluarsa chace" VerticalTextAlignment="Center"
+                                 TextColor="Black" />
+                                <Label Text="1 Hari"
+                                 HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"
+                                 TextColor="#503026" />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10,0,20,0">
+                                <Label Text="Data bersarkan bulanan" VerticalTextAlignment="Center" TextColor="Black"/>
+                                <Label Text="Bulanan" HorizontalOptions="EndAndExpand" TextColor="Black" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10,0,20,0">
+                                <Label Text="Data bersarkan bulanan" VerticalTextAlignment="Center" TextColor="Black"/>
+                                <Switch HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Margin="10,0,20,0" Orientation="Horizontal">
+                                <Label Text="Bebaskan chace" TextColor="Black" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:shellmenuitem="clr-namespace:RentalModeOn.Views.ShellMenuItem"
+       xmlns:views="clr-namespace:RentalModeOn.Views"
+       xmlns:main="clr-namespace:RentalModeOn.Views.Main"
+       xmlns:plan="clr-namespace:RentalModeOn.Views.Perencanaan"
+       xmlns:detail="clr-namespace:RentalModeOn.Views.Detail"
+             mc:Ignorable="d"
+             x:Class="RentalModeOn.Views.MainPage">
+    
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!--Color Tab and title pada Flyout-->
+            <Color x:Key="ThemeColor">#EF3D55</Color>
+            <Color x:Key="GrayColor">Gray</Color>
+            <Color x:Key="BgColor">#F0F0F0</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+                
+                <Setter Property="Shell.BackgroundColor" Value="Silver"/>
+
+                <Setter Property="Shell.ForegroundColor" Value="Red"/>
+                <Setter Property="Shell.UnselectedColor" Value="Yellow"/>
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
+            
+            <!--Color Menu bawah Flyout-->
+            <Color x:Key="Theme">Red</Color>
+            <Style x:Key="FlyoutBottom" TargetType="Element">
+                <Setter Property="Shell.AnchorX" Value="80"/>
+                <Setter Property="Shell.FlyoutBackgroundColor" Value="Black"/>
+            </Style>
+            <Style TargetType="MenuItem" BasedOn="{StaticResource FlyoutBottom}"/>
+
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!--Header Flyout-->
+    <Shell.FlyoutHeader>
+        <shellmenuitem:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+    <!--Home Page-->
+    <FlyoutItem Title="Main Menu">        
+        <Tab Title="Page 1" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate main:Page1}"/>
+        </Tab>
+        <Tab Title="Page 2" Icon="basket_icon">
+            <ShellContent ContentTemplate="{DataTemplate main:Page2}"/>
+        </Tab>        
+    </FlyoutItem>
+    
+    <!--Statistik-->
+    <FlyoutItem Title="Statistik" Icon="search_icon">
+        <Tab Title="Statistik" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate views:StatistikPage}"/>
+        </Tab>        
+    </FlyoutItem>
+
+    <!--Perencanaan-->
+    <FlyoutItem Title="Perencanaan" Icon="hamburger_icon">
+        <Tab Title="Kebutuhan" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate plan:KebutuhanPage}"/>
+        </Tab>
+        <Tab Title="Proses" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate plan:ProsesPage}"/>
+        </Tab>
+    </FlyoutItem>
+
+    <!--Detail-->
+    <FlyoutItem Title="Detail" Icon="settings_icon">
+        <Tab Title="Karyawan" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate detail:KaryawanPage}"/>
+        </Tab>
+        <Tab Title="Pemasukan" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate detail:PamasukanPage}"/>
+        </Tab>
+        <Tab Title="Pengeluaran" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate detail:PangeluaranPage}"/>
+        </Tab>
+        <Tab Title="Pelanggan" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate detail:PelangganPage}"/>
+        </Tab>
+    </FlyoutItem>
+    
+    <MenuItem Text="" />
+    <MenuItem Text=""/>
+    <MenuItem Text=""/>
+
+
+    <FlyoutItem Title="Pengaturan" Icon="settings_icon">
+        <ShellContent ContentTemplate="{DataTemplate views:PengaturanPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Backup / Restore" Icon="settings_icon">
+        <ShellContent ContentTemplate="{DataTemplate views:BackupPage}"/>
+    </FlyoutItem>
+
+</Shell>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:RentalModeOn.ViewModels"
+             
+             mc:Ignorable="d"
+             x:Class="RentalModeOn.Views.Perencanaan.KebutuhanPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+        <!--Bar Chart-->
+            <StackLayout HeightRequest="200" Margin="10,20,10,0">
+                <chart:SfChart x:Name="ChartKebutuhan"
+                                 AreaBorderColor="Black" AreaBorderWidth="2" HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="FillAndExpand">
+                    <!--Menampilkan ketika diclik-->
+                    <chart:SfChart.ChartBehaviors>
+                        <chart:ChartTooltipBehavior BackgroundColor="Black" BorderWidth="3" BorderColor="White"
+                                                        TextColor="White" FontSize="15" Duration="5"/>
+                    </chart:SfChart.ChartBehaviors>
+
+                    <!--Binding Data-->
+                    <chart:SfChart.BindingContext>
+                        <local:ViewModelStatistik/>
+                    </chart:SfChart.BindingContext>
+
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis IsVertical="True"
+                                                >
+                            <chart:CategoryAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="Black" Font="Bold,15"/>
+                            </chart:CategoryAxis.LabelStyle>
+                            <!--LabelRotationAngle="5"  biar datanya jika diperlihatkan menjadi sama rata-->
+
+                            <!--<chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Name" TextColor="Black" FontSize="25"/>
+                                </chart:CategoryAxis.Title>-->
+
+                        </chart:CategoryAxis>
+                    </chart:SfChart.PrimaryAxis>
+
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis IsVisible="False" Maximum="300">
+                            <!--disable angka yang ada disisi kiri diagram-->
+
+                            <!--<chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="Height (in cm)" TextColor="Black" FontSize="25"/>
+                                </chart:NumericalAxis.Title>-->
+
+                        </chart:NumericalAxis>
+                    </chart:SfChart.SecondaryAxis>
+
+                    <!--Tipe Chart-->
+                    <chart:SfChart.Series>
+                        <chart:BarSeries ItemsSource="{Binding Data}" Label="Heights" 
+                                                XBindingPath="Name" YBindingPath="Height" EnableTooltip="True">
+
+                            <chart:BarSeries.DataMarker>
+                                <chart:ChartDataMarker LabelContent="DataMarkerLabel" ShowLabel="True" />
+                                <!--tampilkan data-->
+                            </chart:BarSeries.DataMarker>
+
+                            <chart:BarSeries.ColorModel>
+                                <chart:ChartColorModel Palette="Custom">
+                                    <chart:ChartColorModel.CustomBrushes>
+                                        <Color>Red</Color>
+                                        <Color>Green</Color>
+                                    </chart:ChartColorModel.CustomBrushes>
+                                </chart:ChartColorModel>
+                            </chart:BarSeries.ColorModel>
+
+                        </chart:BarSeries>
+                    </chart:SfChart.Series>
+
+                </chart:SfChart>
+            </StackLayout>
+        <!--#endregion-->
+        <!--Checkbox-->
+            <StackLayout Margin="15,20,10,0" Spacing="0">
+        <!--progress bar 1-->
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <CheckBox VerticalOptions="Center" Color="Green"/>
+                    <Label Text="Daftar Item" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+                
+                <StackLayout>
+                    <ProgressBar Progress="1" ProgressColor="Black" />
+                </StackLayout>
+        <!--progress bar 2-->
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <CheckBox VerticalOptions="Center" Color="Green"/>
+                    <Label Text="Daftar Item" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <ProgressBar Progress="1" ProgressColor="Black" />
+                </StackLayout>
+        <!--progress bar 3-->
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <CheckBox VerticalOptions="Center" Color="Green"/>
+                    <Label Text="Daftar Item" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <ProgressBar Progress="1" ProgressColor="Black" />
+                </StackLayout>
+        <!--progress bar 4-->
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <CheckBox VerticalOptions="Center" Color="Green"/>
+                    <Label Text="Daftar Item" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <ProgressBar Progress="1" ProgressColor="Black" />
+                </StackLayout>
+
+            </StackLayout>
+        <!--#endregion-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

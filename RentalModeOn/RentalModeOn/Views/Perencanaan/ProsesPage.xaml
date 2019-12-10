@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:RentalModeOn.ViewModels"
+             
+             mc:Ignorable="d"
+             x:Class="RentalModeOn.Views.Perencanaan.ProsesPage" Title="Proses">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout >
+                <chart:SfChart x:Name="ChartProses" HeightRequest="200"
+                                 AreaBorderColor="Black" AreaBorderWidth="2" HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="FillAndExpand">
+                    <!--Menampilkan ketika diclik-->
+                    <chart:SfChart.ChartBehaviors>
+                        <chart:ChartTooltipBehavior BackgroundColor="Black" BorderWidth="3" BorderColor="White"
+                                                        TextColor="White" FontSize="15" Duration="5"/>
+                    </chart:SfChart.ChartBehaviors>
+
+                    <!--Binding Data-->
+                    <chart:SfChart.BindingContext>
+                        <local:ViewModelStatistik/>
+                    </chart:SfChart.BindingContext>
+
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis IsVertical="True"
+                                                >
+                            <chart:CategoryAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="Black" Font="Bold,15"/>
+                            </chart:CategoryAxis.LabelStyle>
+                            <!--LabelRotationAngle="5"  biar datanya jika diperlihatkan menjadi sama rata-->
+
+                            <!--<chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Name" TextColor="Black" FontSize="25"/>
+                                </chart:CategoryAxis.Title>-->
+
+                        </chart:CategoryAxis>
+                    </chart:SfChart.PrimaryAxis>
+
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis IsVisible="False" Maximum="300">
+                            <!--disable angka yang ada disisi kiri diagram-->
+
+                            <!--<chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="Height (in cm)" TextColor="Black" FontSize="25"/>
+                                </chart:NumericalAxis.Title>-->
+
+                        </chart:NumericalAxis>
+                    </chart:SfChart.SecondaryAxis>
+
+                    <!--Tipe Chart-->
+                    <chart:SfChart.Series>
+                        <chart:ColumnSeries ItemsSource="{Binding Data}" Label="Heights" 
+                                                XBindingPath="Name" YBindingPath="Height" EnableTooltip="True">
+
+                            <chart:ColumnSeries.DataMarker>
+                                <chart:ChartDataMarker LabelContent="DataMarkerLabel" ShowLabel="True" />
+                                <!--tampilkan data-->
+                            </chart:ColumnSeries.DataMarker>
+
+                            <chart:ColumnSeries.ColorModel>
+                                <chart:ChartColorModel Palette="Custom">
+                                    <chart:ChartColorModel.CustomBrushes>
+                                        <Color>Red</Color>
+                                        <Color>Green</Color>
+                                    </chart:ChartColorModel.CustomBrushes>
+                                </chart:ChartColorModel>
+                            </chart:ColumnSeries.ColorModel>
+
+                        </chart:ColumnSeries>
+                    </chart:SfChart.Series>
+
+                </chart:SfChart>
+            </StackLayout>
+
+            <!--Slider binding value-->
+            <StackLayout Margin="10,20,10,0" Spacing="0">
+                <Label Text="Input Estimasi" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center" Margin="0,0,0,5"/>
+                
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Button Grid.Row="0" Grid.Column="3" Text="Reset"/>
+                    <Slider x:Name="slider1" MinimumTrackColor="Red" MaximumTrackColor="Black" Grid.Row="0" Grid.ColumnSpan="3"
+                            Maximum="20"/>
+                    <Label  Grid.Row="1" Grid.Column="2" TextColor="Black" FontSize="18"
+                           x:Name="label1" Text="{Binding Source={x:Reference slider1}, Path=Value, StringFormat='Value : {0:F0}'}"/>
+
+                    <Button Grid.Row="2" Grid.Column="3" Text="Reset"/>
+                    <Slider x:Name="slider2" MinimumTrackColor="Red" MaximumTrackColor="Black" Grid.Row="2" Grid.ColumnSpan="3"
+                            Maximum="20"/>
+                    <Label  Grid.Row="3" Grid.Column="2" TextColor="Black" FontSize="18"
+                           x:Name="label2" Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='Value : {0:F0}'}"/>
+                    
+                    <Button Grid.Row="4" Grid.Column="3" Text="Reset"/>
+                    <Slider x:Name="slider3" MinimumTrackColor="Red" MaximumTrackColor="Black" Grid.Row="4" Grid.ColumnSpan="3"
+                            Maximum="20"/>
+                    <Label  Grid.Row="5" Grid.Column="2" TextColor="Black" FontSize="18"
+                           x:Name="label3" Text="{Binding Source={x:Reference slider3}, Path=Value, StringFormat='Value : {0:F0}'}"/>
+
+                    <Button Grid.Row="6" Grid.Column="3" Text="Reset"/>
+                    <Slider x:Name="slider4" MinimumTrackColor="Red" MaximumTrackColor="Black" Grid.Row="6" Grid.ColumnSpan="3"
+                            Maximum="20"/>
+                    <Label  Grid.Row="7" Grid.Column="2" TextColor="Black" FontSize="18"
+                           x:Name="label4" Text="{Binding Source={x:Reference slider4}, Path=Value, StringFormat='Value : {0:F0}'}"/>
+                </Grid>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

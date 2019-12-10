@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             HeightRequest="170"
+             x:Class="RentalModeOn.Views.ShellMenuItem.FlyoutHeader">
+
+    <Grid BackgroundColor="Silver" Opacity="1" Margin="0" Padding="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <Image Source="akun" Grid.Row="1" Grid.Column="2" 
+               BackgroundColor="Transparent" />
+
+        <Label Text="User" Grid.Row="2" Grid.Column="2" 
+               BackgroundColor="Transparent"
+               HorizontalTextAlignment="Center" 
+               FontSize="Large" FontAttributes="Bold" />
+    </Grid>
+  
+</ContentView>

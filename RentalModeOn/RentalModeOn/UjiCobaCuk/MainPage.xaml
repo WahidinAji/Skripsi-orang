@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+       xmlns:views="clr-namespace:RentalModeOn.UjiCobaCuk"
+             x:Class="RentalModeOn.UjiCobaCuk.MainPage">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">#EF3D55</Color>
+            <Color x:Key="GrayColor">Gray</Color>
+            <Color x:Key="BgColor">#F0F0F0</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
+        </ResourceDictionary>
+    </Shell.Resources>
+    
+    <FlyoutItem Title="Home">
+        <Tab Title="Statistik" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate views:StatistikPage}"/>
+        </Tab>
+        <Tab Title="Perancanaan" Icon="basket_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:PerencanaanPage}"/>
+        </Tab>
+        <Tab Title="Detail" Icon="hamburger_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:DetailPage}"/>
+        </Tab>
+        <Tab Title="Pengaturan" Icon="search_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:PengaturanPage}"/>
+        </Tab>
+        <Tab Title="Backup / Restore" Icon="settings_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:BackupPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Setting">
+        <Tab Title="Statistik" Icon="akun">
+            <ShellContent ContentTemplate="{DataTemplate views:StatistikPage}"/>
+        </Tab>
+        <Tab Title="Perancanaan" Icon="basket_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:PerencanaanPage}"/>
+        </Tab>
+        <Tab Title="Detail" Icon="hamburger_icon">
+            <ShellContent ContentTemplate="{DataTemplate views:DetailPage}"/>
+        </Tab>
+    </FlyoutItem>
+</Shell>
