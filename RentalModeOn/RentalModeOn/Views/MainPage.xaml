@@ -8,25 +8,28 @@
        xmlns:main="clr-namespace:RentalModeOn.Views.Main"
        xmlns:plan="clr-namespace:RentalModeOn.Views.Perencanaan"
        xmlns:detail="clr-namespace:RentalModeOn.Views.Detail"
+       xmlns:ujicoba="clr-namespace:RentalModeOn.UjiCobaCuk"
              mc:Ignorable="d"
              x:Class="RentalModeOn.Views.MainPage">
     
     <Shell.Resources>
         <ResourceDictionary>
             <!--Color Tab and title pada Flyout-->
-            <Color x:Key="ThemeColor">#EF3D55</Color>
-            <Color x:Key="GrayColor">Gray</Color>
-            <Color x:Key="BgColor">#F0F0F0</Color>
+            <!--<Color x:Key="ThemeColor">#EF3D55</Color>-->
+            <Color x:Key="ThemeColor">Blue</Color> <!--Warna Item ketika dipilih-->
+            <Color x:Key="GrayColor">Gray</Color> <!--Warna Item ketika non dipilih-->
+            <Color x:Key="BgColor">Yellow</Color> <!--Warna bar bawah-->
+            <!--<Color x:Key="BgColor">#F0F0F0</Color>-->
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
                 <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
                 
-                <Setter Property="Shell.BackgroundColor" Value="Silver"/>
+                <Setter Property="Shell.BackgroundColor" Value="Wheat"/>
 
-                <Setter Property="Shell.ForegroundColor" Value="Red"/>
-                <Setter Property="Shell.UnselectedColor" Value="Yellow"/>
+                <!--<Setter Property="Shell.ForegroundColor" Value="Red"/>
+                <Setter Property="Shell.UnselectedColor" Value="Yellow"/>-->
             </Style>
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
             
@@ -59,7 +62,7 @@
     <!--Statistik-->
     <FlyoutItem Title="Statistik" Icon="search_icon">
         <Tab Title="Statistik" Icon="akun">
-            <ShellContent ContentTemplate="{DataTemplate views:StatistikPage}"/>
+            <ShellContent ContentTemplate="{DataTemplate ujicoba:StatistikPage}"/>
         </Tab>        
     </FlyoutItem>
 

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfBarcode.XForms;assembly=Syncfusion.SfBarcode.XForms"
+             x:Class="RentalOnline.QRCode">
+    
+    <ContentPage.Content>
+        <syncfusion:SfBarcode BackgroundColor="Red" Text="Wahidin Aji" Symbology="QRCode" ShowText="True">
+ 
+            <syncfusion:SfBarcode.SymbologySettings>
+
+                <!--<syncfusion:DataMatrixSettings XDimension="8" Encoding="ASCIINumeric" Size="Size144x144"/>-->
+
+                <syncfusion:QRBarcodeSettings XDimension="8" ErrorCorrectionLevel="High" InputMode="BinaryMode" Version="Version10" />
+
+            </syncfusion:SfBarcode.SymbologySettings>
+
+        </syncfusion:SfBarcode>
+    </ContentPage.Content>
+</ContentPage>
