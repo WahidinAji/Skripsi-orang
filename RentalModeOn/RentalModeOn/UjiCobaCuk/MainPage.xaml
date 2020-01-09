@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-       xmlns:views="clr-namespace:RentalModeOn.UjiCobaCuk"
+       xmlns:views="clr-namespace:RentalModeOn.UjiCobaCuk"       
              x:Class="RentalModeOn.UjiCobaCuk.MainPage">
 
     <Shell.Resources>

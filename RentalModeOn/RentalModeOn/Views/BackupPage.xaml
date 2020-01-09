@@ -7,11 +7,15 @@
              x:Class="RentalModeOn.Views.BackupPage" Title="Backup / Restore">
     <ContentPage.Content>
         <AbsoluteLayout>
+            <BoxView AbsoluteLayout.LayoutBounds="0,0,1,0.45" 
+                     AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional" 
+                     BackgroundColor="Wheat" CornerRadius="0,0,0,25"></BoxView>
             <Label Text="Alamat Server" AbsoluteLayout.LayoutBounds="85,40,100,50" TextColor="Black"/>
             <ImageButton BackgroundColor="Silver" Source="akun.png" CornerRadius="50" BorderColor="Transparent"
                    AbsoluteLayout.LayoutBounds="25,40,70,50" Scale="0.6" />
-            <Label Text="http:myfirstportofolio.io" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="90,60,150,50"/>
+            <Label Text="http:myfirstportofolio.io" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="90,60,150,50" TextColor="Blue"/>
             <ProgressBar IsVisible="True" AbsoluteLayout.LayoutBounds="85,60,250,50" ProgressColor="Black" />
+            <!--<Entry Placeholder="http:myfirstportofolio.io" FontAttributes="Italic"  AbsoluteLayout.LayoutBounds="90,45,150,50" />-->
             <TableView AbsoluteLayout.LayoutBounds="30,100,350,200">
                 <TableRoot>
                     <TableSection>

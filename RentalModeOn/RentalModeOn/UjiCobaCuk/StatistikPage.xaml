@@ -3,13 +3,124 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:RentalModeOn.ViewModels"
              mc:Ignorable="d"
              x:Class="RentalModeOn.UjiCobaCuk.StatistikPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <AbsoluteLayout BackgroundColor="Aqua">
+
+                <!--Diagram Batang-->
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,0.35" Margin="0,2,0,0"
+                                AbsoluteLayout.LayoutFlags="All" BackgroundColor="White">
+                    <chart:SfChart HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="FillAndExpand">
+                        <chart:SfChart.BindingContext>
+                            <local:ViewModelStatistik/>
+                        </chart:SfChart.BindingContext>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis IsVertical="True">
+                                <chart:CategoryAxis.LabelStyle>
+                                    <chart:ChartAxisLabelStyle TextColor="Black" Font="Bold,10" />
+                                </chart:CategoryAxis.LabelStyle>
+                            </chart:CategoryAxis> 
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis IsVisible="False" Maximum="300"/>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:SfChart.Series>
+                            <chart:ColumnSeries ItemsSource="{Binding Data}" Label="Heights"
+                                                XBindingPath="Name" YBindingPath="Height" EnableTooltip="True">
+                                <chart:ColumnSeries.DataMarker>
+                                    <chart:ChartDataMarker LabelContent="DataMarkerLabel" ShowLabel="True"/>
+                                </chart:ColumnSeries.DataMarker>
+
+                                <chart:ColumnSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom">
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <Color>Red</Color>
+                                            <Color>Green</Color>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:ColumnSeries.ColorModel>
+                            </chart:ColumnSeries>
+                        </chart:SfChart.Series>
+                    </chart:SfChart>
+
+                </AbsoluteLayout>
+                
+                <!--#endregion-->
+
+                <!--Pie Chart 1-->
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0.53,1,0.33" 
+                                AbsoluteLayout.LayoutFlags="All" BackgroundColor="Black">
+                    <chart:SfChart AbsoluteLayout.LayoutBounds="0,0,0.9,1" ChartPadding="0" Margin="0,0,100,0"
+                                   HeightRequest="0"  HorizontalOptions="EndAndExpand"
+                                   BackgroundColor="Silver"
+                                   AbsoluteLayout.LayoutFlags="SizeProportional">
+                        <!--Binding Data-->
+                        <chart:SfChart.BindingContext>
+                            <local:ViewModelStatistik/>
+                        </chart:SfChart.BindingContext>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend DockPosition="Left"  >
+
+                                <chart:ChartLegend.LabelStyle>
+                                    <chart:ChartLegendLabelStyle TextColor="Red" Font="Bold,18" />
+                                </chart:ChartLegend.LabelStyle>
+                            </chart:ChartLegend>
+                        </chart:SfChart.Legend>
+
+                        <!--Tipe Chart-->
+                        <chart:SfChart.Series>
+
+                            <chart:PieSeries LegendIcon="Rectangle" ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Height"
+                                             EnableDataPointSelection="True" EnableAnimation="True" EnableTooltip="True" >
+
+                                <chart:PieSeries.DataMarker>
+                                    <chart:ChartDataMarker LabelContent="Percentage"/>
+                                </chart:PieSeries.DataMarker>
+
+                                <chart:PieSeries.ColorModel>
+                                    <chart:ChartColorModel Palette="Custom">
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <Color>Red</Color>
+                                            <Color>Yellow</Color>
+                                            <Color>Green</Color>
+                                            <Color>Blue</Color>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:PieSeries.ColorModel>
+                            </chart:PieSeries>
+
+                        </chart:SfChart.Series>
+
+                    </chart:SfChart>
+
+                    <!--<StackLayout BackgroundColor="AntiqueWhite" AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="FillAndExpand" Opacity="0.5"
+                                 AbsoluteLayout.LayoutFlags="All">
+                        <Button Text="cekk" AbsoluteLayout.LayoutBounds="0,0,0.20,0.1" AbsoluteLayout.LayoutFlags="All"
+                                />
+
+                    </StackLayout>-->
+                </AbsoluteLayout>
+                <!--#endregion-->
+
+                <!--Pie Chart 2-->
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0.99,1,0.3"
+                                AbsoluteLayout.LayoutFlags="All" BackgroundColor="Green" Opacity="0.5">
+
+                </AbsoluteLayout>
+                <!--#endregion-->
+
+            </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

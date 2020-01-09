@@ -2,6 +2,7 @@ E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\bin\Debug\netsta
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\bin\Debug\netstandard2.0\RentalModeOn.dll
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\bin\Debug\netstandard2.0\ref\RentalModeOn.dll
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\bin\Debug\netstandard2.0\RentalModeOn.pdb
+E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\RentalModeOn.csprojAssemblyReference.cache
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\App.xaml.g.cs
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\UjiCobaCuk\BackupPage.xaml.g.cs
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\UjiCobaCuk\DetailPage.xaml.g.cs
@@ -28,4 +29,3 @@ E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netsta
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\RentalModeOn.dll
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\ref\RentalModeOn.dll
 E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\RentalModeOn.pdb
-E:\Belajar C#\Mbak Sinta\RentalModeOn\RentalModeOn\RentalModeOn\obj\Debug\netstandard2.0\RentalModeOn.csprojAssemblyReference.cache
