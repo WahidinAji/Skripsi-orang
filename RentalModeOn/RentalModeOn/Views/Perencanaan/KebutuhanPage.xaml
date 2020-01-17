@@ -8,6 +8,17 @@
              
              mc:Ignorable="d"
              x:Class="RentalModeOn.Views.Perencanaan.KebutuhanPage">
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Kebutuhan" Margin="0,15,0,0" FontSize="20" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Image Source="akun" Margin="10,15,0,0" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+        </StackLayout>
+    </Shell.TitleView>
+    <!--<NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="label"/>
+        </StackLayout>
+    </NavigationPage.TitleView>-->
     
     <ContentPage.Content>
         <StackLayout>

@@ -7,6 +7,14 @@
              xmlns:local="clr-namespace:RentalModeOn.ViewModels"
              mc:Ignorable="d"
              x:Class="RentalModeOn.Views.Detail.PelangganPage" Title="Pelanggan">
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="300" WidthRequest="200">
+            <Label Text="Pelanggan" Margin="0,15,0,0" FontSize="20" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Image Source="akun" Margin="10,15,0,0" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+        </StackLayout>
+    </Shell.TitleView>
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0">
