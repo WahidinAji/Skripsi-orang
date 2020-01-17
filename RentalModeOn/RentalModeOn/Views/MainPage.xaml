@@ -11,13 +11,20 @@
        xmlns:ujicoba="clr-namespace:RentalModeOn.UjiCobaCuk"
              mc:Ignorable="d"
              x:Class="RentalModeOn.Views.MainPage">
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="300" WidthRequest="200">
+            <Label Text="Pengaturan" Margin="0,15,0,0" FontSize="20" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Image Source="akun" Margin="10,15,0,0" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+        </StackLayout>
+    </Shell.TitleView>
     
     <Shell.Resources>
         <ResourceDictionary>
             <!--Color Tab and title pada Flyout-->
             <!--<Color x:Key="ThemeColor">#EF3D55</Color>-->
             <Color x:Key="ThemeColor">Blue</Color> <!--Warna Item ketika dipilih-->
-            <Color x:Key="GrayColor">Gray</Color> <!--Warna Item ketika non dipilih-->
+            <Color x:Key="GrayColor">Red</Color> <!--Warna Item ketika non dipilih-->
             <Color x:Key="BgColor">Yellow</Color> <!--Warna bar bawah-->
             <!--<Color x:Key="BgColor">#F0F0F0</Color>-->
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -63,6 +70,7 @@
     <FlyoutItem Title="Statistik" Icon="search_icon">
         <Tab Title="Statistik" Icon="akun">
             <ShellContent ContentTemplate="{DataTemplate ujicoba:StatistikPage}"/>
+            <!--<ShellContent ContentTemplate="{DataTemplate views:StatistikPage}"/>-->
         </Tab>        
     </FlyoutItem>
 

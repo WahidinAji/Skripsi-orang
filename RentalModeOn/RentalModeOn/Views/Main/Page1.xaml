@@ -4,7 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RentalModeOn.Views.Main.Page1" Title="Page 1">
+             x:Class="RentalModeOn.Views.Main.Page1" >
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="300" WidthRequest="200">
+            <Label Text="Page 1" Margin="0,15,0,0" FontSize="20" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Image Source="akun" Margin="10,15,0,0" BackgroundColor="Accent" HorizontalOptions="Start" VerticalOptions="Start"/>
+        </StackLayout>
+    </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="This is the Page 1" FontSize="50" FontAttributes="Bold"
